@@ -207,16 +207,27 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                            <img src="C:\Users\275680\OneDrive\Desktop\Portfolio\photo.jpg" alt="Profile" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
-                            <i data-feather="award" class="text-yellow-500 w-8 h-8"></i>
-                        </div>
-                    </div>
-                </div>
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+  <div class="relative">
+    <div class="relative">
+      <!-- 🌟 Multiple Thin Yellow Pulse Rings -->
+      <span class="absolute inset-0 rounded-full border-2 border-yellow-500 animate-ping"></span>
+      <span class="absolute inset-0 rounded-full border-2 border-yellow-600 animate-ping [animation-delay:0.5s]"></span>
+      <span class="absolute inset-0 rounded-full border-2 border-yellow-700 animate-ping [animation-delay:1s]"></span>
+
+      <!-- 🖼 Profile image -->
+      <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border shadow-xl relative">
+        <img src="\photo.jpg" alt="Profile" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- 🏅 Award icon -->
+    <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+      <i data-feather="award" class="text-yellow-500 w-8 h-8"></i>
+    </div>
+  </div>
+</div>
+
             </div>
         </div>
     </section>
@@ -226,8 +237,8 @@
     <section id="about" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">My Journey</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-yellow-800 mb-4">My Journey</h2>
+                <p class="text-lg text-blue-600 max-w-2xl mx-auto">
                     A timeline of my professional evolution
                 </p>
             </div>
@@ -1024,7 +1035,7 @@ sendMessage.addEventListener('click', () => {
                 `;
             } else if (
                 userMsgLower.includes("journey") ||
-                userMsgLower.includes("learning") ||
+                userMsgLower.includes("learn") ||
                 userMsgLower.includes("path")
             ) {
                 botReply = `
@@ -1038,7 +1049,7 @@ sendMessage.addEventListener('click', () => {
                 `;
             } else if (
                 userMsgLower.includes("skill") ||
-                userMsgLower.includes("skills") ||
+                userMsgLower.includes("ski") ||
                 userMsgLower.includes("technical")
             ) {
                 botReply = `
@@ -1052,7 +1063,7 @@ sendMessage.addEventListener('click', () => {
                 `;
             } else if (
                 userMsgLower.includes("certificate") ||
-                userMsgLower.includes("certificates") ||
+                userMsgLower.includes("cer") ||
                 userMsgLower.includes("certification")
             ) {
                 botReply = `
@@ -1066,7 +1077,7 @@ sendMessage.addEventListener('click', () => {
                 userMsgLower.includes("coding profile") ||
                 userMsgLower.includes("profiles") ||
                 userMsgLower.includes("platform") ||
-                userMsgLower.includes("leetcode")
+                userMsgLower.includes("coding")
             ) {
                 botReply = `
                     Here are my coding profiles 🔗:
@@ -1078,8 +1089,8 @@ sendMessage.addEventListener('click', () => {
                 `;
             } else if (
                 userMsgLower.includes("language") ||
+                userMsgLower.includes("bhasha") ||
                 userMsgLower.includes("speak") ||
-                userMsgLower.includes("hindi") ||
                 userMsgLower.includes("english")
             ) {
                 botReply = `
