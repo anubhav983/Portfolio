@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        /* Typewriter cursor */
+        #typewriter::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* AI Chat styles */
+        #ai-assistant {
+            transition: transform 0.3s;
+        }
+        
+        #ai-assistant:hover {
+            transform: scale(1.1);
+        }
+        
+        #chat-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        #chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        
+        .dark #chat-messages::-webkit-scrollbar-track {
+            background: #1159ce;
+        }
+        
+        .dark #chat-messages::-webkit-scrollbar-thumb {
+            background: #6b7280;
+        }
+
+        .dark {
+            color-scheme: dark;
+        }
+        .dark body {
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+        .dark .bg-gray-50 {
+            background-color: #111827;
+        }
+        .dark .text-gray-600, .dark .text-gray-700 {
+            color: #d1d5db;
+        }
+        .dark .text-gray-800 {
+            color: #f3f4f6;
+        }
+        .dark .border-gray-700 {
+            border-color: #374151;
+        }
+        .dark .bg-gray-800 {
+            background-color: #111827;
+        }
+        .dark .bg-gray-900 {
+            background-color: #030712;
+        }
+        .dark .text-gray-300 {
+            color: #d1d5db;
+        }
+        .dark .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        .active {
+            color: #3bf6d1;
+            font-weight: 600;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        #hero {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <span class="text-xl font-bold gradient-text">Portfolio</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#coding" class="nav-link">Coding Profiles</a>
+                <a href="#contact" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Contact</a>
+                
+                <!-- Desktop Theme Toggle -->
+                <button id="theme-toggle" class="text-gray-500 hover:text-gray-900 dark:hover:text-white focus:outline-none">
+                    <i data-feather="moon" class="w-5 h-5 block dark:hidden"></i> <!-- Show moon in light mode -->
+                    <i data-feather="sun" class="w-5 h-5 hidden dark:block"></i> <!-- Show sun in dark mode -->
+                </button>
+            </div>
+
+            <!-- Mobile Menu + Toggle -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="theme-toggle-mobile" class="text-gray-500 hover:text-gray-900 dark:hover:text-white focus:outline-none">
+                    <i data-feather="moon" class="w-5 h-5 block dark:hidden"></i> <!-- Show moon in light mode -->
+                    <i data-feather="sun" class="w-5 h-5 hidden dark:block"></i> <!-- Show sun in dark mode -->
+                </button>
+                <button id="menu-btn" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4">
+            <a href="#home" class="block py-2 nav-link-mobile active">Home</a>
+            <a href="#about" class="block py-2 nav-link-mobile">About</a>
+            <a href="#education" class="block py-2 nav-link-mobile">Education</a>
+            <a href="#experience" class="block py-2 nav-link-mobile">Experience</a>
+            <a href="#skills" class="block py-2 nav-link-mobile">Skills</a>
+            <a href="#projects" class="block py-2 nav-link-mobile">Projects</a>
+            <a href="#certificates" class="block py-2 nav-link-mobile">Certificates</a>
+            <a href="#coding" class="block py-2 nav-link-mobile">Coding Profiles</a>
+            <a href="#contact" class="block py-2 px-4 bg-blue-600 text-white rounded mx-2 mt-2 text-center">Contact</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Typewriter Effect -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button id="ai-assistant" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+        </button>
+        <div id="ai-chat" class="hidden absolute bottom-16 right-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="font-semibold">AI Assistant</h3>
+                <button id="close-chat" class="text-gray-500 hover:text-gray-700">
+                    <i data-feather="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="h-64 overflow-y-auto mb-4 text-sm">
+                <div class="bg-gray-300 dark:bg-blue-100 text-blue-800 rounded-lg p-3 mb-2">
+                    Hi there! I'm your portfolio assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="flex">
+                <input type="text" id="chat-input" placeholder="Ask me anything..." 
+                    class="flex-1 px-3 py-2 border rounded-l-lg focus:outline-none dark:bg-gray-500 dark:border-gray-600">
+                <button id="send-message" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg">
+                    <i data-feather="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24" data-aos="fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Anubhav Tiwari</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">
+                        <span id="typewriter" class="inline-block"></span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Passionate about creating elegant solutions to complex problems. 
+                        Dedicated to Python and cutting-edge Al technologies to create applications that drive efficiency, enhance decision-making, and 
+                        improve user experiences across various industries. 
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition duration-300">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="C:\Users\275680\Downloads\photo.jpg" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+                            <i data-feather="award" class="text-yellow-500 w-8 h-8"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+     <!-- About Me Section - Timeline Style -->
+    <section id="about" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">My Journey</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    A timeline of my professional evolution
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- The timeline line -->
+                <div class="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500 -translate-x-1/2"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-8 md:space-y-16">
+                    <!-- Item 1 -->
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
+                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Completing Intermediate </h3>
+                                <p class="text-gray-600">Unware about Programming Language</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                                    <i data-feather="code" class="w-8 h-8"></i>
+                                </div>
+                                <div class="absolute -bottom-8 -right-8 bg-white p-2 rounded-full shadow-md">
+                                    <span class="text-sm font-medium">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-full bg-purple-500 flex items-center justify-center text-white">
+                                    <i data-feather="book" class="w-8 h-8"></i>
+                                </div>
+                                <div class="absolute -bottom-8 -left-8 bg-white p-2 rounded-full shadow-md">
+                                    <span class="text-sm font-medium">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2" data-aos="fade-left">
+                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-purple-600 mb-2">Started to Pursue B.tech</h3>
+                                <p class="text-gray-600">Start to Learn Programming Language</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
+                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-red-600 mb-2">Working as Campus Ambassdor at IIT Roorkee</h3>
+                                <p class="text-gray-600"> Promoted campus events to enhance student engagement and participation.  </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center text-white">
+                                    <i data-feather="briefcase" class="w-8 h-8"></i>
+                                </div>
+                                <div class="absolute -bottom-8 -right-8 bg-white p-2 rounded-full shadow-md">
+                                    <span class="text-sm font-medium">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white">
+                                    <i data-feather="award" class="w-8 h-8"></i>
+                                </div>
+                                <div class="absolute -bottom-8 -left-8 bg-white p-2 rounded-full shadow-md">
+                                    <span class="text-sm font-medium">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2" data-aos="fade-left">
+                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-green-600 mb-2">Working as Python Developer in Zaalima Development</h3>
+                                <p class="text-gray-600"> Worked on Python libraries to build and test functional solutions. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Download CV Button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="C:\Users\275680\Downloads\Resume.pdf" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition duration-300"
+                   download="Anubhav Tiwari-Resume.pdf">
+                    <i data-feather="download-cloud" class="w-5 h-5 mr-2"></i>
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Education</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    My academic background and qualifications.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education 1 -->
+                   
+                   <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                            <i data-feather="book-open" class="text-purple-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Bachelor of Technology</h3>
+                            <p class="text-blue-600">PSIT</p>
+                            <p class="text-gray-500 mt-1">2023 - 2027</p>
+                            <p class="text-gray-700 mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Education 2 -->
+                  <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i data-feather="book" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Intermediate</h3>
+                            <p class="text-blue-600">St. Xavier High School</p>
+                            <p class="text-gray-500 mt-1">2019- 2020</p>
+                            <p class="text-gray-700 mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Education 3 -->
+                 <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i data-feather="book" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">High School</h3>
+                            <p class="text-blue-600">St. Xavier High School</p>
+                            <p class="text-gray-500 mt-1">2019- 2020</p>
+                            <p class="text-gray-700 mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Work Experience</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    My professional journey and the companies I've worked with.
+                </p>
+            </div>
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="md:flex justify-between items-start">
+                        <div class="mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold">Python Developer </h3>
+                            <p class="text-blue-600">Zaalima Development</p>
+                        </div>
+                        <div class="text-gray-500">
+                             March 2025 – May 2025 
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>  Worked on Python libraries to build and test functional solutions. </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="md:flex justify-between items-start">
+                        <div class="mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold">Campus Ambassador</h3>
+                            <p class="text-blue-600"> IIT Roorkee, Uttarakhand </p>
+                        </div>
+                        <div class="text-gray-500">
+                              January 2025 – February 2025
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Promoted campus events to enhance student engagement and participation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    I've worked with a variety of technologies in the web development world.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="code" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+                    <p class="text-gray-600">HTML, CSS, JavaScript, React</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-purple-600 mb-4">
+                        <i data-feather="server" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Backend</h3>
+                    <p class="text-gray-600">Node.js, Express, Django, Flask</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <i data-feather="database" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Database</h3>
+                    <p class="text-gray-600">MySQL,MongoDB</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
+                    <div class="text-red-600 mb-4">
+                        <i data-feather="cloud" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Libraries (Python)</h3>
+                    <p class="text-gray-600">NumPy, Pandas, Sckit-learn, Pytorch, Computer Vision, TensorFlow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Some of my best work that I'm proud to share.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                 <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="C:\Users\275680\Downloads\unnamed (1).png" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Early Stress & Mental Health Detection (Voice + Text) </h3>
+                        <p class="text-gray-600 mb-4">  Built a multi-modal ML model combining speech emotion recognition and text sentiment analysis to detect early signs of stress, 
+anxiety, and depression. </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Python</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">PyTorch/TensorFlow</span>
+                            <span class="px-2 py-1 bg-gray-100 text-yellow-800 text-xs rounded-full">React</span>
+                        </div>
+                        <a href="https://github.com/anubhav983/MindTrack" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="C:\Users\275680\Downloads\unnamed.png" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Vedicyagya – Online Yagya Request Platform </h3>
+                        <p class="text-gray-600 mb-4">Built a web application for managing and submitting Yagya requests online, with form submission and request tracking functionality.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Node.js + Express.js</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">MongoDB Atlas </span>
+                        </div>
+                        <a href="https://github.com/anubhav983/Vedicyagya" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="C:\Users\275680\Downloads\Gemini_Generated_Image_yvre32yvre32yvre.png" alt="Project 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Pustakshala – Online Book Access Platform </h3>
+                        <p class="text-gray-600 mb-4">Developed a web platform for seamless access and reading of books with features like search, categorization, and user-friendly UI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">HTML+CSS</span>
+                            <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"> Node.js+MongoDB Atlas</span>
+                        </div>
+                        <a href="https://github.com/anubhav983/Pustakshala" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-16 bg-gray-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Certificates</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Certifications I've earned to validate my skills.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-800">Python Programming</h3>
+                            <p class="text-blue-600 font-medium">Infosys</p>
+                            <p class="text-blue-500 text-sm mt-1">Issued May 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-700">Demonstrated ability to develop and maintain applications on AWS.</p>
+                </div>
+                <!-- Certificate 2 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-md border border-red-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-red-800">Problem Solving</h3>
+                            <p class="text-red-600 font-medium">HackerRank </p>
+                            <p class="text-red-500 text-sm mt-1">Issued June 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-red-700">Certified in designing, developing, and managing applications on Google Cloud.</p>
+                </div>
+                <!-- Certificate 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-green-800">Accenture</h3>
+                            <p class="text-green-600 font-medium">Coding Development</p>
+                            <p class="text-green-500 text-sm mt-1">Issued Aug 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-green-700">Validated expertise in building applications with React and React Native.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Profiles Section -->
+    <section id="coding" class="py-16" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Coding Profiles</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    My profiles on various coding platforms and communities.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Profile 1 -->
+                <a href="https://github.com/anubhav983" class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-200">
+                    <div class="flex items-center">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="github" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">GitHub</h3>
+                            <p class="text-gray-600 text-sm font-medium">anubhav983</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-sm text-gray-700">
+                        <span class="bg-gray-200 px-2 py-1 rounded-full">5 Repos</span>
+                    </div>
+                </a>
+                <!-- Profile 2 -->
+                <a href="https://leetcode.com/u/Anubhav___123/" class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-orange-200">
+                    <div class="flex items-center">
+                        <div class="bg-orange-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="code" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg  text-orange-800">LeetCode</h3>
+                            <p class="text-orange-600 text-sm font-medium">Anubhav_MMIII</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-sm text-orange-700">
+                        <span class="bg-orange-200 px-2 py-1 rounded-full">500+ Problems</span>
+                        <span class="bg-orange-200 px-2 py-1 rounded-full">Top 3%</span>
+                    </div>
+                </a>
+                <!-- Profile 3 -->
+                <a href="https://www.geeksforgeeks.org/user/2k23csaimhd3y/" class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-blue-200">
+                    <div class="flex items-center">
+                        <div class="bg-blue-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="link" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-800">GeeksForGeeks</h3>
+                            <p class="text-blue-600 text-sm font-medium">2k23csaimhd3y</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-sm text-blue-700">
+                        <span class="bg-blue-200 px-2 py-1 rounded-full">Intermediate</span>
+                        <span class="bg-blue-200 px-2 py-1 rounded-full">1800+ Rating</span>
+                    </div>
+                </a>
+                <!-- Profile 4 -->
+                <a href="http://hackerrank.com/profile/csaiml1a_2313998" class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-green-200">
+                    <div class="flex items-center">
+                        <div class="bg-green-600 p-3 rounded-lg mr-4 text-white">
+                            <i data-feather="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-green-800">HackerRank</h3>
+                            <p class="text-green-600 text-sm font-medium">Anubhav_0868</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-sm text-green-700">
+                        <span class="bg-green-200 px-2 py-1 rounded-full">6★ in Python</span>
+                        <span class="bg-green-200 px-2 py-1 rounded-full">5★ in SQL</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900 text-white" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss potential opportunities?
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-2 rounded-lg mr-4">
+                                <i data-feather="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-300">2k23.csaiml2313998@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-600 p-2 rounded-lg mr-4">
+                                <i data-feather="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-gray-300">+91 9555850868</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                                <i data-feather="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-300">Kanpur Nagar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/anubhav983" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition duration-300">
+                                <i data-feather="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anubhav-tiwari-a578bb293/" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition duration-300">
+                                <i data-feather="linkedin" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="https://github.com/anubhav983" class="hover:text-white">
+                        <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://x.com/AnubhavTiw33925" class="hover:text-white">
+                        <i data-feather="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anubhav-tiwari-a578bb293/" class="hover:text-white">
+                        <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-sm">
+                        &copy; 2025 Anubhav Tiwari. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('svg');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.icons.menu.replace(icon);
+            } else {
+                feather.icons.x.replace(icon);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuBtn.querySelector('svg');
+                        feather.icons.menu.replace(icon);
+                    }
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+
+        // Check for saved user preference or use system preference
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!localStorage.getItem('color-theme') && 
+            window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        // Toggle function
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            feather.replace();
+        }
+
+        // Add event listeners
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+
+        // Replace all feather icons
+        feather.replace();
+
+        // Typewriter Effect
+        const typewriterElement = document.getElementById('typewriter');
+        const professions = ['Full Stack Developer', 'Software Developer', 'AI Enthusiast','Python Developer','Data Scientist','Data Analyst'];
+        let i = 0;
+        let j = 0;
+        let currentProfession = '';
+        let isDeleting = false;
+
+        function typeWriter() {
+            currentProfession = professions[i];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentProfession.substring(0, j-1);
+                j--;
+                
+                if (j === 0) {
+                    isDeleting = false;
+                    i = (i + 1) % professions.length;
+                }
+            } else {
+                typewriterElement.textContent = currentProfession.substring(0, j+1);
+                j++;
+                
+                if (j === currentProfession.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, 2000);
+                    return;
+                }
+            }
+            
+            setTimeout(typeWriter, isDeleting ? 50 : 100);
+        }
+
+        // Start typewriter effect
+        setTimeout(typeWriter, 1000);
+
+       // AI Assistant Chat
+const aiAssistant = document.getElementById('ai-assistant');
+const aiChat = document.getElementById('ai-chat');
+const closeChat = document.getElementById('close-chat');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+const sendMessage = document.getElementById('send-message');
+
+aiAssistant.addEventListener('click', () => {
+    aiChat.classList.toggle('hidden');
+});
+
+closeChat.addEventListener('click', () => {
+    aiChat.classList.add('hidden');
+});
+
+sendMessage.addEventListener('click', () => {
+    const userMessage = chatInput.value.trim();
+    if (userMessage) {
+        // User message (Right-aligned bubble)
+        chatMessages.innerHTML += `
+            <div class="flex justify-end mb-2">
+                <div class="bg-pink-400 text-white rounded-lg px-3 py-2 max-w-xs text-sm shadow">
+                    ${userMessage}
+                </div>
+            </div>
+        `;
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // AI response after short delay
+        setTimeout(() => {
+            let botReply = "";
+            const userMsgLower = userMessage.toLowerCase(); // Use the lowercased variable
+
+            // --- BOT REPLY CONDITIONS ---
+            if (
+                userMsgLower.includes("education") ||
+                userMsgLower.includes("school") ||
+                userMsgLower.includes("study") ||
+                userMsgLower.includes("gpa")
+            ) {
+                botReply = `
+                    Here's my education background 📘:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>B.Tech</strong> – Pranveer Singh Institute of Technology, Kanpur Nagar (Expected July 2027, GPA: 84.3%)</li>
+                        <li><strong>Intermediate</strong> – St. Xavier High School, Mandhana (March 2022, GPA: 78.6%)</li>
+                        <li><strong>High School</strong> – St. Xavier High School, Mandhana (March 2020, GPA: 85.3%)</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("experience") ||
+                userMsgLower.includes("job") ||
+                userMsgLower.includes("internship")
+            ) {
+                botReply = `
+                    Here is my professional experience 💼:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>Python Developer - Zaalima Development</strong> (Mar-May 2025)</li>
+                        <li class="list-none pl-4 text-xs">Worked with Python libraries to build and test functional solutions.</li>
+                        <li class="mt-2"><strong>Campus Ambassador - IIT Roorkee</strong> (Jan-Feb 2025)</li>
+                        <li class="list-none pl-4 text-xs">Promoted campus events and student engagement.</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("project") ||
+                userMsgLower.includes("work")
+            ) {
+                botReply = `
+                    Sure! Here are my featured projects:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>Early Stress & Mental Health Detection (Voice + Text)</strong> – A multi-modal ML model using audio and text inputs.</li>
+                        <li class="list-none pl-4 text-xs">(Tech: Python, PyTorch, Transformers, Flask, React, Pandas, NumPy)</li>
+                        <li><strong>Pustakshala – Online Book Platform</strong> – A web app for reading and managing books online.</li>
+                        <li class="list-none pl-4 text-xs">(Tech: HTML, CSS, JavaScript, Node.js, MongoDB, Tailwind CSS)</li>
+                        <li><strong>Vedicyagya – Online Yagya Request Platform</strong> – A full-stack app for Yagya request submission and tracking.</li>
+                        <li class="list-none pl-4 text-xs">(Tech: React.js, Node.js, Express.js, MongoDB Atlas)</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("journey") ||
+                userMsgLower.includes("learning") ||
+                userMsgLower.includes("path")
+            ) {
+                botReply = `
+                    Here's a glimpse of my learning journey 🚀:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li>💻 Started with Python and C++, focusing on problem-solving on LeetCode, HackerRank, etc.</li>
+                        <li>🌐 Gained professional experience as a Python Developer at Zaalima Development.</li>
+                        <li>⚙️ Built full-stack MERN projects like Pustakshala and Vedicyagya.</li>
+                        <li>🤖 Explored AI/ML by building a multi-modal stress detection model using PyTorch and Transformers.</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("skill") ||
+                userMsgLower.includes("skills") ||
+                userMsgLower.includes("technical")
+            ) {
+                botReply = `
+                    Here are my key technical skills 💡:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>Languages:</strong> Python, C/C++, JavaScript</li>
+                        <li><strong>Frameworks:</strong> React, Node.js, Express, Tailwind CSS, Bootstrap</li>
+                        <li><strong>Database:</strong> MongoDB, SQL</li>
+                        <li><strong>AI/ML:</strong> PyTorch, TensorFlow, Scikit-learn, OpenCV</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("certificate") ||
+                userMsgLower.includes("certificates") ||
+                userMsgLower.includes("certification")
+            ) {
+                botReply = `
+                    Here are my earned certifications 🏅:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>HackerRank:</strong> Python, JS, SQL, C++, Problem Solving</li>
+                        <li><strong>Infosys:</strong> Python, DBMS, OOP, Bootstrap, HTML5, CSS3</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("coding profile") ||
+                userMsgLower.includes("profiles") ||
+                userMsgLower.includes("platform") ||
+                userMsgLower.includes("leetcode")
+            ) {
+                botReply = `
+                    Here are my coding profiles 🔗:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><a href="https://leetcode.com/u/Anubhav___123/" target="_blank" class="text-blue-500 underline"><strong>LeetCode (Anubhav_MMIII):</strong></a> 500+ problems (Top 2.5%)</li>
+                        <li><a href="http://hackerrank.com/profile/csaiml1a_2313998" target="_blank" class="text-blue-500 underline"><strong>HackerRank (Anubhav_0868):</strong></a> 800+ problems</li>
+                        <li><a href="https://www.geeksforgeeks.org/user/2k23csaimhd3y/"" target="_blank" class="text-blue-500 underline"><strong>GeeksForGeeks (2k23csaimhd3y):</strong></a> 100+ problems</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("language") ||
+                userMsgLower.includes("speak") ||
+                userMsgLower.includes("hindi") ||
+                userMsgLower.includes("english")
+            ) {
+                botReply = `
+                    I am proficient in these languages:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>English:</strong> Full Proficiency</li>
+                        <li><strong>Hindi:</strong> Native</li>
+                    </ul>
+                `;
+            } else if (
+                userMsgLower.includes("contact") ||
+                userMsgLower.includes("connect") ||
+                userMsgLower.includes("email")
+            ) {
+                botReply = `
+                    You can reach me easily through these platforms 📩:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>Email:</strong> <a href="mailto:2k23.csaiml2313998@gmail.com" class="underline">2k23.csaiml2313998@gmail.com</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anubhav-tiwari-a578bb293/" target="_blank" class="underline">anubhav-tiwari</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/anubhav983" target="_blank" class="underline">anubhav983</a></li>
+                    </ul>
+                `;
+            }else {
+                botReply = `
+                    I'm your AI portfolio assistant 🤖.<br>
+                    I currently answer questions about the following topics:
+                    <ul class="list-disc pl-5 mt-2">
+                        <li><strong>Education</strong> – to know his academic background</li>
+                        <li><strong>Experience</strong> – to see his professional experience</li>
+                        <li><strong>Projects</strong> – to see his featured work</li>
+                        <li><strong>Journey</strong> – to learn about his learning path</li>
+                        <li><strong>Skills</strong> – to explore his technical skills</li>
+                        <li><strong>Certificates</strong> – to view his earned certifications</li>
+                        <li><strong>Coding Profiles</strong> – to check his competitive programming profiles</li>
+                        <li><strong>Languages</strong> – to know which human languages he speaks</li>
+                        <li><strong>Contact</strong> – to get in touch with him</li>
+                    </ul>
+                `;
+            }
+
+            // --- Add empty AI bubble first ---
+            const botBubble = document.createElement('div');
+            botBubble.className = "flex justify-start mb-2";
+            botBubble.innerHTML = `
+                <div class="bg-blue-100 dark:bg-gray-700 text-black dark:text-white rounded-lg px-3 py-2 max-w-xs text-sm shadow typing-bubble"></div>
+            `;
+            chatMessages.appendChild(botBubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // --- Typewriter effect ---
+            const bubbleContent = botBubble.querySelector('.typing-bubble');
+            let i = 0;
+            const typingSpeed = 10; // speed in ms per character
+            const plainText = botReply;
+
+            const typeEffect = () => {
+                if (i < plainText.length) {
+                    // This is where the magic happens: instead of just setting plain text, 
+                    // we update the HTML content one character at a time.
+                    bubbleContent.innerHTML = plainText.substring(0, i + 1);
+                    i++;
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    setTimeout(typeEffect, typingSpeed);
+                }
+            };
+            typeEffect();
+        }, 500);
+    }
+});
+// Allow pressing "Enter" to send message
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage.click();
+    }
+});
+
+    </script>
+</body>
+</html>
