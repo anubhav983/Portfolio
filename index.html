@@ -86,7 +86,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
         }
         .active {
-            color: #3bf6d1;
+            color: #df701a;
             font-weight: 600;
         }
         .gradient-text {
@@ -120,7 +120,7 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#certificates" class="nav-link">Certificates</a>
                 <a href="#coding" class="nav-link">Coding Profiles</a>
-                <a href="#contact" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Contact</a>
+                <a href="#contact" class="px-3 py-1 bg-blue-900 text-white rounded hover:bg-blue-700 transition">Contact</a>
                 
                 <!-- Desktop Theme Toggle -->
                 <button id="theme-toggle" class="text-gray-500 hover:text-gray-900 dark:hover:text-blue-900 focus:outline-none">
@@ -157,32 +157,62 @@
 
 
 
-    <!-- Typewriter Effect -->
-    <div class="fixed bottom-4 right-4 z-50">
-        <button id="ai-assistant" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
-            <i data-feather="message-circle" class="w-6 h-6"></i>
-        </button>
-        <div id="ai-chat" class="hidden absolute bottom-16 right-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4">
-            <div class="flex justify-between items-center mb-2">
-                <h3 class="font-semibold">AI Assistant</h3>
-                <button id="close-chat" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-4 h-4"></i>
-                </button>
-            </div>
-            <div id="chat-messages" class="h-64 overflow-y-auto mb-4 text-sm">
-                <div class="bg-gray-300 dark:bg-blue-100 text-blue-800 rounded-lg p-3 mb-2">
-                    Hi there! I'm your portfolio assistant. How can I help you today?
-                </div>
-            </div>
-            <div class="flex">
-                <input type="text" id="chat-input" placeholder="Ask me anything..." 
-                    class="flex-1 px-3 py-2 border rounded-l-lg focus:outline-none dark:bg-gray-500 dark:border-gray-600">
-                <button id="send-message" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg">
-                    <i data-feather="send" class="w-4 h-4"></i>
-                </button>
+  <!-- AI Assistant Bubble -->
+<div class="fixed bottom-4 right-4 z-50 flex flex-col items-center space-y-2">
+
+    <!-- Welcome Tooltip -->
+    <div id="ai-welcome" 
+         class="hidden bg-blue-600 text-white text-sm px-3 py-2 rounded-lg shadow-lg animate-fadeIn">
+        👋 Hi! I'm your AI Assistant
+    </div>
+
+    <!-- AI Button -->
+    <button id="ai-assistant" 
+        class="relative bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Label -->
+    <span class="text-xs mt-1 text-gray-500 dark:text-gray-600 font-medium">AI Assistant</span>
+
+    <!-- Chat Box -->
+    <div id="ai-chat" 
+        class="hidden absolute bottom-16 right-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4">
+        <div class="flex justify-between items-center mb-2">
+            <h3 class="font-semibold">AI Assistant</h3>
+            <button id="close-chat" class="text-gray-500 hover:text-gray-700">
+                <i data-feather="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="h-64 overflow-y-auto mb-4 text-sm">
+            <div class="bg-gray-300 dark:bg-blue-100 text-blue-800 rounded-lg p-3 mb-2">
+                Hi there! I'm your portfolio assistant. How can I help you today?
             </div>
         </div>
+        <div class="flex">
+            <input type="text" id="chat-input" placeholder="Ask me anything..." 
+                class="flex-1 px-3 py-2 border rounded-l-lg focus:outline-none dark:bg-gray-500 dark:border-gray-600">
+            <button id="send-message" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg">
+                <i data-feather="send" class="w-4 h-4"></i>
+            </button>
+        </div>
     </div>
+</div>
+
+<!-- Animation Styles -->
+<style>
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(140, 237, 14, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 176, 129, 0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.5s ease-in-out; }
+#ai-assistant { animation: pulse 2.5s infinite; }
+</style>
 
     <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24" data-aos="fade-in">
@@ -237,8 +267,8 @@
     <section id="about" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-yellow-800 mb-4">My Journey</h2>
-                <p class="text-lg text-blue-600 max-w-2xl mx-auto">
+                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">My Journey</h2>
+                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                     A timeline of my professional evolution
                 </p>
             </div>
@@ -348,70 +378,76 @@
 
 
 
-     <!-- Education Section -->
-    <section id="education" class="py-16 bg-gray-50" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Education</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    My academic background and qualifications.
+     <section id="education" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">My Academic Journey</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                A snapshot of my formal education and qualifications.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-indigo-600 group scale-95 group-hover:scale-100">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                        <i data-feather="terminal" class="text-indigo-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Bachelor of Technology</h3>
+                </div>
+                
+                <p class="text-lg font-semibold text-indigo-700">Pranveer Singh Institute of Technology (PSIT) ,Bhauti</p>
+                <p class="text-gray-500 mt-1 mb-3">2023 - 2027 (Expected)</p>
+                
+                <p class="text-gray-700 mt-2 hidden group-hover:block transition-all duration-300">
+                    <strong>Currently pursuing</strong> a B.Tech degree in Computer Science and Engineering. Focusing on modern software development practices.
                 </p>
+                <div class="h-6 mt-2 text-xl text-gray-500 font-bold tracking-widest text-center group-hover:hidden transition-all duration-100">...</div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Education 1 -->
-                   
-                   <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-start">
-                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
-                            <i data-feather="book-open" class="text-purple-600 w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Bachelor of Technology</h3>
-                            <p class="text-blue-600">PSIT</p>
-                            <p class="text-gray-500 mt-1">2023 - 2027</p>
-                            <p class="text-gray-700 mt-2"></p>
-                        </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-teal-600 group scale-95 group-hover:scale-100">
+                <div class="flex items-center mb-4">
+                    <div class="bg-teal-100 p-3 rounded-full mr-4">
+                        <i data-feather="book-open" class="text-teal-600 w-6 h-6"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Intermediate (10+2)</h3>
                 </div>
-                    <!-- Education 2 -->
-                  <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i data-feather="book" class="text-blue-600 w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Intermediate</h3>
-                            <p class="text-blue-600">St. Xavier High School</p>
-                            <p class="text-gray-500 mt-1">2019- 2020</p>
-                            <p class="text-gray-700 mt-2"></p>
-                        </div>
+                
+                <p class="text-lg font-semibold text-teal-700">St. Xavier High School ,Mandhana</p>
+                <p class="text-gray-500 mt-1 mb-3">2021 - 2022</p> 
+                
+                <p class="text-gray-700 mt-2 hidden group-hover:block transition-all duration-300">
+                    Focused on the <strong>Science stream</strong> (PCM). Developed a strong analytical and logical foundation.
+                </p>
+                <div class="h-6 mt-2 text-xl text-gray-500 font-bold tracking-widest text-center group-hover:hidden transition-all duration-100">...</div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-purple-600 group scale-95 group-hover:scale-100">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <i data-feather="award" class="text-purple-600 w-6 h-6"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-800">High School (10th)</h3>
                 </div>
-                <!-- Education 3 -->
-                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i data-feather="book" class="text-blue-600 w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">High School</h3>
-                            <p class="text-blue-600">St. Xavier High School</p>
-                            <p class="text-gray-500 mt-1">2019- 2020</p>
-                            <p class="text-gray-700 mt-2"></p>
-                        </div>
-                    </div>
-                </div>
+                
+                <p class="text-lg font-semibold text-purple-700">St. Xavier High School ,Mandhana</p>
+                <p class="text-gray-500 mt-1 mb-3">2019 - 2020</p>
+                
+                <p class="text-gray-700 mt-2 hidden group-hover:block transition-all duration-300">
+                    Completed foundational education.Developed robust <strong>time management</strong> and study discipline skills.
+                </p>
+                <div class="h-6 mt-2 text-xl text-gray-500 font-bold tracking-widest text-center group-hover:hidden transition-all duration-100">...</div>
             </div>
         </div>
-    </section>
-
-
+    </div>
+</section>
 
     <!-- Experience Section -->
     <section id="experience" class="py-16" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Work Experience</h2>
+                <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Work Experience</h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     My professional journey and the companies I've worked with.
                 </p>
@@ -460,7 +496,7 @@
     <section id="skills" class="py-16 bg-gray-50" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">My Skills</h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     I've worked with a variety of technologies in the web development world.
                 </p>
@@ -507,7 +543,7 @@
     <section id="projects" class="py-16" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Featured Projects</h2>
+                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Featured Projects</h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     Some of my best work that I'm proud to share.
                 </p>
@@ -574,218 +610,331 @@ anxiety, and depression. </p>
 
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-16 bg-gray-50" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Certificates</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Certifications I've earned to validate my skills.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Certificate 1 -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="award" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-blue-800">Python Programming</h3>
-                            <p class="text-blue-600 font-medium">Infosys</p>
-                            <p class="text-blue-500 text-sm mt-1">Issued May 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-blue-700">Demonstrated ability to develop and maintain applications on AWS.</p>
-                </div>
-                <!-- Certificate 2 -->
-                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-md border border-red-200">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-red-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="award" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-red-800">Problem Solving</h3>
-                            <p class="text-red-600 font-medium">HackerRank </p>
-                            <p class="text-red-500 text-sm mt-1">Issued June 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-red-700">Certified in designing, developing, and managing applications on Google Cloud.</p>
-                </div>
-                <!-- Certificate 3 -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-green-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="award" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Accenture</h3>
-                            <p class="text-green-600 font-medium">Coding Development</p>
-                            <p class="text-green-500 text-sm mt-1">Issued Aug 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-green-700">Validated expertise in building applications with React and React Native.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="certificates" class="py-20 bg-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-200 opacity-50 blur-3xl rounded-full -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 opacity-50 blur-3xl rounded-full -z-10"></div>
 
-    <!-- Coding Profiles Section -->
-    <section id="coding" class="py-16" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Coding Profiles</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    My profiles on various coding platforms and communities.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Profile 1 -->
-                <a href="https://github.com/anubhav983" class="bg-gradient-to-br from-pink-200 to-pink-300 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-200">
-                    <div class="flex items-center">
-                        <div class="bg-gray-800 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="github" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-pink-700">GitHub</h3>
-                            <p class="text-pink-700 text-sm font-medium">anubhav983</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-between text-sm text-pink-700">
-                        <span class="bg-pink-400 px-2 py-1 rounded-full">5 Repos</span>
-                    </div>
-                </a>
-                <!-- Profile 2 -->
-                <a href="https://leetcode.com/u/Anubhav___123/" class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-orange-200">
-                    <div class="flex items-center">
-                        <div class="bg-orange-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="code" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg  text-orange-800">LeetCode</h3>
-                            <p class="text-orange-600 text-sm font-medium">Anubhav_MMIII</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-between text-sm text-orange-700">
-                        <span class="bg-orange-200 px-2 py-1 rounded-full">500+ Problems</span>
-                        <span class="bg-orange-200 px-2 py-1 rounded-full">Top 3%</span>
-                    </div>
-                </a>
-                <!-- Profile 3 -->
-                <a href="https://www.geeksforgeeks.org/user/2k23csaimhd3y/" class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-blue-200">
-                    <div class="flex items-center">
-                        <div class="bg-blue-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="link" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-blue-800">GeeksForGeeks</h3>
-                            <p class="text-blue-600 text-sm font-medium">2k23csaimhd3y</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-between text-sm text-blue-700">
-                        <span class="bg-blue-200 px-2 py-1 rounded-full">Intermediate</span>
-                        <span class="bg-blue-200 px-2 py-1 rounded-full">1800+ Rating</span>
-                    </div>
-                </a>
-                <!-- Profile 4 -->
-                <a href="http://hackerrank.com/profile/csaiml1a_2313998" class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-green-200">
-                    <div class="flex items-center">
-                        <div class="bg-green-600 p-3 rounded-lg mr-4 text-white">
-                            <i data-feather="terminal" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-green-800">HackerRank</h3>
-                            <p class="text-green-600 text-sm font-medium">Anubhav_0868</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-between text-sm text-green-700">
-                        <span class="bg-green-200 px-2 py-1 rounded-full">6★ in Python</span>
-                        <span class="bg-green-200 px-2 py-1 rounded-full">5★ in SQL</span>
-                    </div>
-                </a>
-            </div>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Certificates
+            </h2>
+            <p class="text-gray-600 text-xl max-w-2xl mx-auto">
+                Certified achievements that showcase my technical excellence and growth.
+            </p>
         </div>
-    </section>
 
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <a href="\Python Programming.pdf" target="_blank"
+                class="group relative p-6 rounded-2xl bg-white shadow-xl transition-transform transform hover:-translate-y-2 border-t-4 border-blue-500 hover:shadow-blue-500/30">
+                <div class="relative z-10">
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-500 p-3 rounded-lg mr-4 shadow-md">
+                            <i data-feather="terminal" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-600">Python Programming</h3>
+                            <p class="text-gray-600 text-sm">Infosys</p>
+                            <p class="text-sm text-gray-500 font-medium mt-0.5">May 2024</p> 
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed">
+                        Certified in <strong>Python fundamentals</strong> and <strong>object-oriented programming.</strong>
+                    </p>
+                    <div class="mt-4 flex items-center text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                        <span>View Certificate</span>
+                        <i data-feather="external-link" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="\problem_solving_basic certificate.pdf" target="_blank"
+                class="group relative p-6 rounded-2xl bg-white shadow-xl transition-transform transform hover:-translate-y-2 border-t-4 border-pink-500 hover:shadow-pink-500/30">
+                <div class="relative z-10">
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="bg-pink-500 p-3 rounded-lg mr-4 shadow-md">
+                            <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-pink-600">Problem Solving</h3>
+                            <p class="text-gray-600 text-sm">HackerRank</p>
+                            <p class="text-sm text-gray-500 font-medium mt-0.5">June 2024</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed">
+                        Certified in <strong>algorithmic problem-solving</strong> and <strong>data structures.</strong>
+                    </p>
+                    <div class="mt-4 flex items-center text-pink-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                        <span>View Certificate</span>
+                        <i data-feather="external-link" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="\accenture certificate.pdf" target="_blank"
+                class="group relative p-6 rounded-2xl bg-white shadow-xl transition-transform transform hover:-translate-y-2 border-t-4 border-green-500 hover:shadow-green-500/30">
+                <div class="relative z-10">
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-500 p-3 rounded-lg mr-4 shadow-md">
+                            <i data-feather="code" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-600">Coding Development</h3>
+                            <p class="text-gray-600 text-sm">Accenture</p>
+                            <p class="text-sm text-gray-500 font-medium mt-0.5">Aug 2024</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed">
+                        Certified in <strong>full-stack coding</strong> and modern <strong>web application</strong>development.
+            
+                    </p>
+                    <div class="mt-4 flex items-center text-green-600 font-medium opacity-0 group-hover:opacity-100 transition">
+                        <span>View Certificate</span>
+                        <i data-feather="external-link" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    feather.replace();
+</script>
+ <section id="coding" class="py-20 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Coding Profiles
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                My performance and presence on competitive and development platforms.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <a href="https://github.com/anubhav983" target="_blank" 
+                class="group relative flex flex-col justify-between h-full rounded-lg bg-white shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-400/30 overflow-hidden">
+                
+                <div class="flex items-start">
+                    <div class="bg-purple-600 p-5 mr-4 flex-shrink-0 self-stretch flex items-center justify-center">
+                        <i data-feather="github" class="w-6 h-6 text-white"></i>
+                    </div>
+
+                    <div class="flex-grow p-4 pb-0">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-purple-600">GitHub</h3>
+                                <p class="text-purple-700 text-sm font-medium">anubhav983</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 text-sm pt-3"> 
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">5 Repositories</span>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">10 Contribution</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4 p-4 pt-3">
+                    <span class="text-purple-600 font-bold text-base opacity-0 group-hover:opacity-100 transition duration-300">
+                        View Profile
+                    </span>
+                    <i data-feather="arrow-right" class="w-4 h-4 text-purple-600 inline-block ml-2 opacity-0 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+            </a>
+
+            <a href="https://leetcode.com/u/Anubhav___123/" target="_blank" 
+                class="group relative flex flex-col justify-between h-full rounded-lg bg-white shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-400/30 overflow-hidden">
+                
+                <div class="flex items-start">
+                    <div class="bg-orange-600 p-5 mr-4 flex-shrink-0 self-stretch flex items-center justify-center">
+                        <i data-feather="terminal" class="w-6 h-6 text-white"></i>
+                    </div>
+
+                    <div class="flex-grow p-4 pb-0">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-orange-600">LeetCode</h3>
+                                <p class="text-orange-700 text-sm font-medium">Anubhav_MMIII</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 text-sm pt-3">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium">500+ Problems</span>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium">Top 2%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4 p-4 pt-3">
+                    <span class="text-orange-600 font-bold text-base opacity-0 group-hover:opacity-100 transition duration-300">
+                        View Profile
+                    </span>
+                    <i data-feather="arrow-right" class="w-4 h-4 text-orange-600 inline-block ml-2 opacity-0 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+            </a>
+
+            <a href="https://www.geeksforgeeks.org/user/2k23csaimhd3y/" target="_blank" 
+                class="group relative flex flex-col justify-between h-full rounded-lg bg-white shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-400/30 overflow-hidden">
+                
+                <div class="flex items-start">
+                    <div class="bg-blue-600 p-5 mr-4 flex-shrink-0 self-stretch flex items-center justify-center">
+                        <i data-feather="link" class="w-6 h-6 text-white"></i>
+                    </div>
+
+                    <div class="flex-grow p-4 pb-0">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-600">GeeksForGeeks</h3>
+                                <p class="text-blue-700 text-sm font-medium">2k23csaimhd3y</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 text-sm pt-3">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Intermediate</span>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Top 5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4 p-4 pt-3">
+                    <span class="text-blue-600 font-bold text-base opacity-0 group-hover:opacity-100 transition duration-300">
+                        View Profile
+                    </span>
+                    <i data-feather="arrow-right" class="w-4 h-4 text-blue-600 inline-block ml-2 opacity-0 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+            </a>
+
+            <a href="http://hackerrank.com/profile/csaiml1a_2313998" target="_blank" 
+                class="group relative flex flex-col justify-between h-full rounded-lg bg-white shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-green-400/30 overflow-hidden">
+                
+                <div class="flex items-start">
+                    <div class="bg-green-600 p-5 mr-4 flex-shrink-0 self-stretch flex items-center justify-center">
+                        <i data-feather="terminal" class="w-6 h-6 text-white"></i>
+                    </div>
+
+                    <div class="flex-grow p-4 pb-0">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-green-600">HackerRank</h3>
+                                <p class="text-green-700 text-sm font-medium">Anubhav_0868</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 text-sm pt-3">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">6★ in Python</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">5★ in SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4 p-4 pt-3">
+                    <span class="text-green-600 font-bold text-base opacity-0 group-hover:opacity-100 transition duration-300">
+                        View Profile
+                    </span>
+                    <i data-feather="arrow-right" class="w-4 h-4 text-green-600 inline-block ml-2 opacity-0 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-900 text-white" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Have a project in mind or want to discuss potential opportunities?
-                </p>
+   <section id="contact" class="py-16 bg-gray-900 text-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Get In Touch
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                Have a project in mind or want to discuss potential opportunities? Let's connect!
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-blue-400">Contact Information</h3>
+                <div class="space-y-6">
+                    
+                    <div class="flex items-start p-4 rounded-lg transition duration-300 hover:bg-gray-800 hover:shadow-xl">
+                        <div class="bg-blue-600 p-3 rounded-xl mr-4 flex-shrink-0 shadow-lg">
+                            <i data-feather="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Email</h4>
+                            <p class="text-blue-300">2k23.csaiml2313998@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start p-4 rounded-lg transition duration-300 hover:bg-gray-800 hover:shadow-xl">
+                        <div class="bg-green-600 p-3 rounded-xl mr-4 flex-shrink-0 shadow-lg">
+                            <i data-feather="phone" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Phone</h4>
+                            <p class="text-green-300">+91 9555850868</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start p-4 rounded-lg transition duration-300 hover:bg-gray-800 hover:shadow-xl">
+                        <div class="bg-purple-600 p-3 rounded-xl mr-4 flex-shrink-0 shadow-lg">
+                            <i data-feather="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Location</h4>
+                            <p class="text-purple-300">Kanpur Nagar</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-10">
+                    <h4 class="font-bold text-xl mb-4 text-blue-400">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/anubhav983" target="_blank" class="bg-gray-800 hover:bg-blue-600 p-4 rounded-full transition duration-300 transform hover:scale-110 shadow-lg">
+                            <i data-feather="github" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anubhav-tiwari-a578bb293/" target="_blank" class="bg-gray-800 hover:bg-blue-600 p-4 rounded-full transition duration-300 transform hover:scale-110 shadow-lg">
+                            <i data-feather="linkedin" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 p-2 rounded-lg mr-4">
-                                <i data-feather="mail" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Email</h4>
-                                <p class="text-gray-300">2k23.csaiml2313998@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-green-600 p-2 rounded-lg mr-4">
-                                <i data-feather="phone" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Phone</h4>
-                                <p class="text-gray-300">+91 9555850868</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-purple-600 p-2 rounded-lg mr-4">
-                                <i data-feather="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-300">Kanpur Nagar</p>
-                            </div>
-                        </div>
+            
+            <div>
+                <form class="space-y-6 bg-gray-800 p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Send a Message</h3>
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1 text-gray-300">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition duration-200">
                     </div>
-                    <div class="mt-8">
-                        <h4 class="font-medium mb-4">Follow Me</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://github.com/anubhav983" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition duration-300">
-                                <i data-feather="github" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/anubhav-tiwari-a578bb293/" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition duration-300">
-                                <i data-feather="linkedin" class="w-5 h-5"></i>
-                            </a>
-                        </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1 text-gray-300">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition duration-200">
                     </div>
-                </div>
-                <div>
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-1 text-gray-300">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition duration-200">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1 text-gray-300">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition duration-200"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-[1.01] shadow-blue-500/50 shadow-xl">
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
