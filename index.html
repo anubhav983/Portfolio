@@ -214,167 +214,200 @@
 #ai-assistant { animation: pulse 2.5s infinite; }
 </style>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24" data-aos="fade-in">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Anubhav Tiwari</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">
-                        <span id="typewriter" class="inline-block"></span>
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                        Passionate about creating elegant solutions to complex problems. 
-                        Dedicated to Python and cutting-edge Al technologies to create applications that drive efficiency, enhance decision-making, and 
-                        improve user experiences across various industries. 
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                            Contact Me
-                        </a>
-                        <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition duration-300">
-                            View Projects
-                        </a>
-                    </div>
-                </div>
-            <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
-  <div class="relative">
-    <div class="relative">
-      <!-- 🌟 Multiple Thin Yellow Pulse Rings -->
-      <span class="absolute inset-0 rounded-full border-2 border-yellow-500 animate-ping"></span>
-      <span class="absolute inset-0 rounded-full border-2 border-yellow-600 animate-ping [animation-delay:0.5s]"></span>
-      <span class="absolute inset-0 rounded-full border-2 border-yellow-700 animate-ping [animation-delay:1s]"></span>
-
-      <!-- 🖼 Profile image -->
-      <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border shadow-xl relative">
-        <img src="\Profile Image.png" alt="Profile" class="w-full h-full object-cover">
+ <!-- Hero Section -->
+<section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-blue-900 via-purple-900 to-black text-white" data-aos="fade-in">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="md:flex items-center justify-between">
+      
+      <!-- LEFT CONTENT -->
+      <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Hi, I'm 
+          <span class="bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Anubhav Tiwari
+          </span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+          <span id="typewriter" class="inline-block"></span>
+        </h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+          Passionate about creating elegant solutions to complex problems. 
+          Dedicated to Python and AI technologies to craft intelligent, efficient, and scalable systems.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition duration-300">
+            Contact Me
+          </a>
+          <a href="#projects" class="px-6 py-3 border-2 border-purple-400 text-purple-300 rounded-lg hover:bg-purple-500/10 transition duration-300">
+            View Projects
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- 🏅 Award icon -->
-    <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
-      <i data-feather="award" class="text-yellow-500 w-8 h-8"></i>
+      <!-- RIGHT SIDE 3D FLOATING IMAGE -->
+      <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+        <div class="frame">
+          <img src="\Profile Image.png" alt="Anubhav" class="photo">
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
 
-            </div>
-        </div>
-    </section>
+  <!-- STYLING -->
+  <style>
+    .frame {
+      width: 22rem;
+      height: 28rem;
+      position: relative;
+      perspective: 1000px;
+      animation: frame-spin 12s linear infinite;
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      object-fit: cover;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transform: rotateY(15deg) rotateX(10deg);
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes frame-spin {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotateY(15deg) rotateX(10deg); }
+      100% { transform: translateY(-20px) rotateY(15deg) rotateX(10deg); }
+    }
+
+     </style>
+</section>
+
 
     
      <!-- About Me Section - Timeline Style -->
-    <section id="about" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">My Journey</h2>
-                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    A timeline of my professional evolution
-                </p>
+    <section id="about" class="py-16 bg-white" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        My Journey
+      </h2>
+      <p class="text-2xl text-blue-500 dark:text-blue-300 max-w-2xl mx-auto">
+        A timeline of my professional evolution
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500 -translate-x-1/2"></div>
+
+      <!-- Timeline Items -->
+      <div class="space-y-8 md:space-y-16">
+
+        <!-- Item 1 -->
+        <div class="relative md:flex items-center gap-8">
+          <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
+            <div class="inline-block bg-white dark:bg-white-800 p-6 rounded-xl shadow-lg transition-colors duration-500">
+              <h3 class="text-xl font-bold text-blue-600 dark:text-blue-500 mb-2">Completing Intermediate</h3>
+              <p class="text-gray-600 dark:text-gray-600">Unaware about Programming Language</p>
             </div>
-            
+          </div>
+          <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
             <div class="relative">
-                <!-- The timeline line -->
-                <div class="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500 -translate-x-1/2"></div>
-                
-                <!-- Timeline Items -->
-                <div class="space-y-8 md:space-y-16">
-                    <!-- Item 1 -->
-                    <div class="relative md:flex items-center gap-8">
-                        <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
-                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold text-blue-600 mb-2">Completing Intermediate </h3>
-                                <p class="text-gray-600">Unware about Programming Language</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
-                            <div class="relative">
-                                <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white">
-                                    <i data-feather="code" class="w-8 h-8"></i>
-                                </div>
-                                <div class="absolute -bottom-8 -right-8 bg-white p-2 rounded-full shadow-md">
-                                    <span class="text-sm font-medium">2022</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2"></div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="relative md:flex items-center gap-8">
-                        <div class="md:w-1/2"></div>
-                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
-                            <div class="relative">
-                                <div class="w-16 h-16 rounded-full bg-purple-500 flex items-center justify-center text-white">
-                                    <i data-feather="book" class="w-8 h-8"></i>
-                                </div>
-                                <div class="absolute -bottom-8 -left-8 bg-white p-2 rounded-full shadow-md">
-                                    <span class="text-sm font-medium">2023</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2" data-aos="fade-left">
-                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold text-purple-600 mb-2">Started to Pursue B.tech</h3>
-                                <p class="text-gray-600">Start to Learn Programming Language</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="relative md:flex items-center gap-8">
-                        <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
-                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold text-red-600 mb-2">Working as Campus Ambassdor at IIT Roorkee</h3>
-                                <p class="text-gray-600"> Promoted campus events to enhance student engagement and participation.  </p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
-                            <div class="relative">
-                                <div class="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center text-white">
-                                    <i data-feather="briefcase" class="w-8 h-8"></i>
-                                </div>
-                                <div class="absolute -bottom-8 -right-8 bg-white p-2 rounded-full shadow-md">
-                                    <span class="text-sm font-medium">2024</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2"></div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div class="relative md:flex items-center gap-8">
-                        <div class="md:w-1/2"></div>
-                        <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
-                            <div class="relative">
-                                <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white">
-                                    <i data-feather="award" class="w-8 h-8"></i>
-                                </div>
-                                <div class="absolute -bottom-8 -left-8 bg-white p-2 rounded-full shadow-md">
-                                    <span class="text-sm font-medium">2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2" data-aos="fade-left">
-                            <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold text-green-600 mb-2">Working as Python Developer in Zaalima Development</h3>
-                                <p class="text-gray-600"> Worked on Python libraries to build and test functional solutions. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                <i data-feather="code" class="w-8 h-8"></i>
+              </div>
+              <div class="absolute -bottom-8 -right-8 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md text-gray-700 dark:text-gray-200">
+                <span class="text-sm font-medium">2022</span>
+              </div>
             </div>
-            
-            <!-- Download CV Button -->
-            <div class="text-center mt-12" data-aos="fade-up">
-                <a href="\Resume.pdf" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition duration-300"
-                   download="Anubhav Tiwari-Resume.pdf">
-                    <i data-feather="download-cloud" class="w-5 h-5 mr-2"></i>
-                    View Resume
-                </a>
-            </div>
+          </div>
+          <div class="md:w-1/2"></div>
         </div>
-    </section>
+
+        <!-- Item 2 -->
+        <div class="relative md:flex items-center gap-8">
+          <div class="md:w-1/2"></div>
+          <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+            <div class="relative">
+              <div class="w-16 h-16 rounded-full bg-purple-500 flex items-center justify-center text-white">
+                <i data-feather="book" class="w-8 h-8"></i>
+              </div>
+              <div class="absolute -bottom-8 -left-8 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md text-gray-700 dark:text-gray-200">
+                <span class="text-sm font-medium">2023</span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2" data-aos="fade-left">
+            <div class="inline-block bg-white dark:bg-white-800 p-6 rounded-xl shadow-lg transition-colors duration-500">
+              <h3 class="text-xl font-bold text-purple-650 dark:text-purple-500 mb-2">Started to Pursue B.Tech</h3>
+              <p class="text-gray-600 dark:text-gray-600">Started learning Programming Languages</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative md:flex items-center gap-8">
+          <div class="md:w-1/2 md:text-right mb-4 md:mb-0" data-aos="fade-right">
+            <div class="inline-block bg-white dark:bg-white-800 p-6 rounded-xl shadow-lg transition-colors duration-500">
+              <h3 class="text-xl font-bold text-red-600 dark:text-red-500 mb-2">Campus Ambassador at IIT Roorkee</h3>
+              <p class="text-gray-600 dark:text-gray-600">Promoted campus events to enhance student engagement and participation.</p>
+            </div>
+          </div>
+          <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+            <div class="relative">
+              <div class="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center text-white">
+                <i data-feather="briefcase" class="w-8 h-8"></i>
+              </div>
+              <div class="absolute -bottom-8 -right-8 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md text-gray-700 dark:text-gray-200">
+                <span class="text-sm font-medium">2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2"></div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="relative md:flex items-center gap-8">
+          <div class="md:w-1/2"></div>
+          <div class="hidden md:flex md:w-1/2 justify-center" data-aos="zoom-in">
+            <div class="relative">
+              <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white">
+                <i data-feather="award" class="w-8 h-8"></i>
+              </div>
+              <div class="absolute -bottom-8 -left-8 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md text-gray-700 dark:text-gray-200">
+                <span class="text-sm font-medium">2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2" data-aos="fade-left">
+            <div class="inline-block bg-white dark:bg-white-800 p-6 rounded-xl shadow-lg transition-colors duration-500">
+              <h3 class="text-xl font-bold text-green-600 dark:text-green-500 mb-2">Python Developer at Zaalima Development</h3>
+              <p class="text-gray-600 dark:text-gray-600">Worked with Python libraries to build and test functional solutions.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Resume Button -->
+    <div class="text-center mt-12" data-aos="fade-up">
+      <a href="\Resume.pdf"
+         class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition duration-300"
+         download="Anubhav Tiwari-Resume.pdf">
+        <i data-feather="download-cloud" class="w-5 h-5 mr-2"></i>
+        View Resume
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -389,10 +422,10 @@
 
         <div class="grid md:grid-cols-3 gap-8">
             
-            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-indigo-600 group scale-95 group-hover:scale-100">
+            <div class="bg-gray-20 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-indigo-600 group scale-95 group-hover:scale-100">
                 <div class="flex items-center mb-4">
                     <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                        <i data-feather="terminal" class="text-indigo-600 w-6 h-6"></i>
+                        <i data-feather="terminal" class="text-indigo-500 w-6 h-6"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800">Bachelor of Technology</h3>
                 </div>
@@ -406,7 +439,7 @@
                 <div class="h-6 mt-2 text-xl text-gray-500 font-bold tracking-widest text-center group-hover:hidden transition-all duration-100">...</div>
             </div>
             
-            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-teal-600 group scale-95 group-hover:scale-100">
+            <div class="bg-gray-20 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-teal-600 group scale-95 group-hover:scale-100">
                 <div class="flex items-center mb-4">
                     <div class="bg-teal-100 p-3 rounded-full mr-4">
                         <i data-feather="book-open" class="text-teal-600 w-6 h-6"></i>
@@ -423,7 +456,7 @@
                 <div class="h-6 mt-2 text-xl text-gray-500 font-bold tracking-widest text-center group-hover:hidden transition-all duration-100">...</div>
             </div>
             
-            <div class="bg-gray-50 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-purple-600 group scale-95 group-hover:scale-100">
+            <div class="bg-gray-20 p-8 rounded-xl shadow-lg transition duration-300 border-b-4 border-purple-600 group scale-95 group-hover:scale-100">
                 <div class="flex items-center mb-4">
                     <div class="bg-purple-100 p-3 rounded-full mr-4">
                         <i data-feather="award" class="text-purple-600 w-6 h-6"></i>
@@ -443,177 +476,402 @@
     </div>
 </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-16" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Work Experience</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    My professional journey and the companies I've worked with.
-                </p>
+ <!-- Experience Section - CSS-Only 3D Hover Cards -->
+<section id="experience" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+        Work Experience
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        A sleek, motion-inspired showcase of my professional milestones.
+      </p>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="grid md:grid-cols-2 gap-10">
+      
+      <!-- Card 1 -->
+      <div class="group relative rounded-2xl bg-white shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-700 hover:-translate-y-3 hover:rotate-1 hover:shadow-2xl hover:scale-[1.03]">
+        <!-- Gradient Glow -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-20 blur-xl transition duration-700"></div>
+
+        <div class="relative p-8">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-2xl font-semibold text-blue-600">Python Developer</h3>
+              <p class="text-orange-300 font-medium mt-1">Zaalima Development</p>
             </div>
-            <div class="space-y-8">
-                <!-- Experience 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="md:flex justify-between items-start">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-semibold">Python Developer </h3>
-                            <p class="text-blue-600">Zaalima Development</p>
-                        </div>
-                        <div class="text-gray-500">
-                             March 2025 – May 2025 
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>  Worked on Python libraries to build and test functional solutions. </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Experience 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="md:flex justify-between items-start">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-semibold">Campus Ambassador</h3>
-                            <p class="text-blue-600"> IIT Roorkee, Uttarakhand </p>
-                        </div>
-                        <div class="text-gray-500">
-                              January 2025 – February 2025
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Promoted campus events to enhance student engagement and participation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <span class="text-gray-500 text-sm">Mar 2025 – May 2025</span>
+          </div>
+          <div class="mt-5">
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li>Developed backend logic using Python and Flask.</li>
+              <li>Optimized APIs and implemented automated testing.</li>
+            </ul>
+          </div>
+
+          <!-- Gradient bottom border animation -->
+          <div class="h-1 w-0 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500 mt-4 rounded-full"></div>
         </div>
-    </section>
+      </div>
 
+      <!-- Card 2 -->
+      <div class="group relative rounded-2xl bg-white shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-700 hover:-translate-y-3 hover:-rotate-1 hover:shadow-2xl hover:scale-[1.03]">
+        <!-- Gradient Glow -->
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-400 opacity-0 group-hover:opacity-20 blur-xl transition duration-700"></div>
 
-     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">My Skills</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    I've worked with a variety of technologies in the web development world.
-                </p>
+        <div class="relative p-8">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-2xl font-semibold text-purple-600">Campus Ambassador</h3>
+              <p class="text-pink-400 font-medium mt-1">IIT Roorkee, Uttarakhand</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Skill 1 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="code" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Frontend</h3>
-                    <p class="text-gray-600">HTML, CSS, JavaScript, React</p>
-                </div>
-                <!-- Skill 2 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
-                    <div class="text-purple-600 mb-4">
-                        <i data-feather="server" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Backend</h3>
-                    <p class="text-gray-600">Node.js, Express, Django, Flask</p>
-                </div>
-                <!-- Skill 3 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
-                    <div class="text-green-600 mb-4">
-                        <i data-feather="database" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Database</h3>
-                    <p class="text-gray-600">MySQL,MongoDB</p>
-                </div>
-                <!-- Skill 4 -->
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md transition duration-300">
-                    <div class="text-red-600 mb-4">
-                        <i data-feather="cloud" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Libraries (Python)</h3>
-                    <p class="text-gray-600">NumPy, Pandas, Sckit-learn, Pytorch, Computer Vision, TensorFlow</p>
-                </div>
-            </div>
+            <span class="text-gray-500 text-sm">Jan 2025 – Feb 2025</span>
+          </div>
+          <div class="mt-5">
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li>Promoted campus events and enhanced student engagement.</li>
+              <li>Led outreach campaigns increasing event participation by 30%.</li>
+            </ul>
+          </div>
+
+          <div class="h-1 w-0 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-500 mt-4 rounded-full"></div>
         </div>
-    </section>
+      </div>
 
+    </div>
+  </div>
+</section>
+  <!-- Skills Section - Floating Gradient Icon Style -->
+<section id="skills" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+        My Skills
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-black-300 max-w-2xl mx-auto">
+        The technologies and tools that empower my development journey.
+      </p>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                 <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Featured Projects</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Some of my best work that I'm proud to share.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                 <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 overflow-hidden">
-                        <img src="\unnamed (1).png" alt="Project 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Early Stress & Mental Health Detection (Voice + Text) </h3>
-                        <p class="text-gray-600 mb-4">  Built a multi-modal ML model combining speech emotion recognition and text sentiment analysis to detect early signs of stress, 
-anxiety, and depression. </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Python</span>
-                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">PyTorch/TensorFlow</span>
-                            <span class="px-2 py-1 bg-gray-100 text-yellow-800 text-xs rounded-full">React</span>
-                        </div>
-                        <a href="https://github.com/anubhav983/MindTrack" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 overflow-hidden">
-                        <img src="\unnamed.png" alt="Project 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Vedicyagya – Online Yagya Request Platform </h3>
-                        <p class="text-gray-600 mb-4">Built a web application for managing and submitting Yagya requests online, with form submission and request tracking functionality.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Node.js + Express.js</span>
-                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">MongoDB Atlas </span>
-                        </div>
-                        <a href="https://github.com/anubhav983/Vedicyagya" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 overflow-hidden">
-                        <img src="\Gemini_Generated_Image_yvre32yvre32yvre.png" alt="Project 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Pustakshala – Online Book Access Platform </h3>
-                        <p class="text-gray-600 mb-4">Developed a web platform for seamless access and reading of books with features like search, categorization, and user-friendly UI.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">HTML+CSS</span>
-                            <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full">Tailwind CSS</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"> Node.js+MongoDB Atlas</span>
-                        </div>
-                        <a href="https://github.com/anubhav983/Pustakshala" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Skill Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      
+      <!-- Skill 1 -->
+      <div class="relative bg-gradient-to-b from-blue-50 to-white dark:from-blue-200 dark:to-blue-200 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl text-center">
+        <div class="relative w-16 h-16 mx-auto mb-6">
+          <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-pink-600 rounded-full blur-md opacity-70 animate-pulse"></div>
+          <div class="relative bg-blue-200 dark:bg-blue-500 rounded-full p-4 shadow-md">
+            <i data-feather="code" class="w-8 h-8 text-pink-600"></i>
+          </div>
         </div>
-    </section>
+        <h3 class="text-xl font-semibold mb-2 text-blue-800 dark:text-blue-800">Frontend</h3>
+        <p class="text-purple-500 text-purple-500">HTML, CSS, JavaScript, React</p>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="relative bg-gradient-to-b from-purple-50 to-white dark:from-purple-200 dark:to-purple-200 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl text-center">
+        <div class="relative w-16 h-16 mx-auto mb-6">
+          <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-600 rounded-full blur-md opacity-70 animate-pulse"></div>
+          <div class="relative bg-purple-200 dark:bg-purple-500 rounded-full p-4 shadow-md">
+            <i data-feather="server" class="w-8 h-8 text-red-300"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-purple-800 dark:text-purple-600">Backend</h3>
+        <p class="text-blue-500 dark:text-blue-500">Node.js, Express, Django, Flask</p>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="relative bg-gradient-to-b from-green-50 to-white dark:from-green-200 dark:to-green-200 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl text-center">
+        <div class="relative w-16 h-16 mx-auto mb-6">
+          <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-600 rounded-full blur-md opacity-70 animate-pulse"></div>
+          <div class="relative bg-green-500 dark:bg-green-500 rounded-full p-4 shadow-md">
+            <i data-feather="database" class="w-8 h-8 text-blue-600"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-green-800 dark:text-green-800">Database</h3>
+        <p class="text-orange-100 dark:text-orange-500">MySQL, MongoDB</p>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="relative bg-gradient-to-b from-green-50 to-white dark:from-red-200 dark:to-red-200 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl text-center">
+        <div class="relative w-16 h-16 mx-auto mb-6">
+          <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-400 rounded-full blur-md opacity-70 animate-pulse"></div>
+          <div class="relative bg-red-500 dark:bg-red-500 rounded-full p-4 shadow-md">
+            <i data-feather="code" class="w-8 h-8 text-green-600"></i>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-red-600 dark:text-red-600">AI / ML Libraries</h3>
+        <p class="text-blue-500 dark:text-pink-500">NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Enhanced Projects Section -->
+<section id="projects" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+      <h2
+        class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+        Featured Projects
+      </h2>
+      <p class="text-gray-600 dark:text-black-500 text-xl max-w-2xl mx-auto">
+        A few highlights of my favorite work — blending innovation, design, and technology.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- 🧠 Project 1 -->
+      <div class="flip-card group">
+        <div class="flip-card-inner rounded-2xl">
+          <!-- Front -->
+          <div class="flip-card-front relative">
+            <img src="\unnamed (1).png" alt="MindTrack Project"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-2xl font-bold mb-1">MindTrack</h3>
+              <p class="text-sm opacity-90">AI Mental Health Detection</p>
+            </div>
+          </div>
+          <!-- Back -->
+         <div
+  class="flip-card-back flex flex-col justify-between items-center text-center p-6 h-full 
+         bg-white/95 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 
+         rounded-2xl shadow-lg dark:shadow-xl transition-colors duration-500">
+
+  <div class="flex-1 flex flex-col justify-center">
+    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-blue-500">
+      Early Stress & Mental Health Detection
+    </h3>
+
+    <p class="text-gray-700 dark:text-black-500 mb-5 text-l leading-relaxed">
+      Built a multimodal ML model combining speech emotion and text sentiment analysis to detect
+      early signs of stress, anxiety, and depression.
+    </p>
+
+    <div class="flex flex-wrap gap-2 justify-center mb-6">
+      <span
+        class="px-3 py-1 bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200 text-xs font-semibold rounded-full">
+        Python
+      </span>
+      <span
+        class="px-3 py-1 bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-200 text-xs font-semibold rounded-full">
+        PyTorch
+      </span>
+      <span
+        class="px-3 py-1 bg-gray-100 text-yellow-700 dark:bg-yellow-800 dark:text-yellow-200 text-xs font-semibold rounded-full">
+        React
+      </span>
+    </div>
+  </div>
+
+  <a href="https://github.com/anubhav983/MindTrack"
+     class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 
+            text-white rounded-lg shadow-md hover:shadow-lg transition-all mt-auto">
+    View Project
+    <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      <!-- 🕉️ Project 2 -->
+      <div class="flip-card group">
+        <div class="flip-card-inner rounded-2xl">
+          <!-- Front -->
+          <div class="flip-card-front relative">
+            <img src="\unnamed.png" alt="Vedicyagya"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-2xl font-bold mb-1">Vedicyagya</h3>
+              <p class="text-sm opacity-90">Online Yagya Request Platform</p>
+            </div>
+          </div>
+          <!-- Back -->
+        <div
+  class="flip-card-back flex flex-col justify-between items-center text-center p-6 h-full 
+         bg-white/95 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 
+         rounded-2xl shadow-lg dark:shadow-xl transition-colors duration-500">
+
+  <div class="flex-1 flex flex-col justify-center">
+    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-purple-500">
+      Vedicyagya Platform
+    </h3>
+
+    <p class="text-gray-700 dark:text-black-300 mb-5 text-l leading-relaxed">
+      A full-stack platform for managing and submitting Yagya requests online with real-time
+      form submission and tracking.
+    </p>
+
+    <div class="flex flex-wrap gap-2 justify-center mb-6">
+      <span
+        class="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200 text-xs font-semibold rounded-full">
+        React
+      </span>
+      <span
+        class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-200 text-xs font-semibold rounded-full">
+        Node.js + Express
+      </span>
+      <span
+        class="px-3 py-1 bg-yellow-100 text-yellow-700 dark:bg-yellow-800 dark:text-yellow-200 text-xs font-semibold rounded-full">
+        MongoDB Atlas
+      </span>
+    </div>
+  </div>
+
+  <a href="https://github.com/anubhav983/Vedicyagya"
+     class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 
+            text-white rounded-lg shadow-md hover:shadow-lg transition-all mt-auto">
+    View Project
+    <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      <!-- 📚 Project 3 -->
+      <div class="flip-card group">
+        <div class="flip-card-inner rounded-2xl">
+          <!-- Front -->
+          <div class="flip-card-front relative">
+            <img src="gt\Gemini_Generated_Image_yvre32yvre32yvre.png" alt="Pustakshala"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-2xl font-bold mb-1">Pustakshala</h3>
+              <p class="text-sm opacity-90">Online Book Access Platform</p>
+            </div>
+          </div>
+          <!-- Back -->
+        <div class="flip-card-back flex flex-col justify-between items-center text-center p-5 md:p-6 h-full">
+  <div class="flex-1 flex flex-col justify-center">
+    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-green-500">
+      Pustakshala
+    </h3>
+    <p class="text-gray-600 dark:text-black-400 mb-4 text-l leading-relaxed">
+      A sleek platform for seamless access and reading of books online with advanced search, categorization, and minimal UI.
+    </p>
+    <div class="flex flex-wrap gap-2 justify-center mb-6">
+      <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">
+        HTML + CSS
+      </span>
+      <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">
+        Tailwind CSS
+      </span>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
+        Node.js + MongoDB
+      </span>
+    </div>
+  </div>
+  <a
+    href="https://github.com/anubhav983/Pustakshala"
+    class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow-md hover:shadow-lg transition-all mt-auto"
+  >
+    View Project <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+  </a>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🌈 Styling -->
+<style>
+  /* Flip Animation + Glass Effect */
+  .flip-card {
+    perspective: 1200px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .flip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 240, 0.1));
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .flip-card-back {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.7), rgba(50, 50, 50, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Animated Gradient Border */
+  .flip-card-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+    background-size: 300% 300%;
+    animation: gradientBorder 4s ease infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+  }
+
+  @keyframes gradientBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .flip-card {
+      cursor: pointer;
+    }
+  }
+</style>
 
 
     <!-- Certificates Section -->
-<section id="certificates" class="py-20 bg-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-200 opacity-50 blur-3xl rounded-full -z-10"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 opacity-50 blur-3xl rounded-full -z-10"></div>
-
+<section id="certificates" class="py-20 bg-white relative overflow-hidden" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
             <h2 class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
